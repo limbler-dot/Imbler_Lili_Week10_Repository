@@ -39,7 +39,9 @@ def ensure_history() -> List[Dict[str, str]]:
     return st.session_state["history"]
 
 
-st.set_page_config(page_title="HF Text Generation", page_icon="🧠")
+st.set_page_config(page_title="My AI Chat", layout ="wide", page_icon="🧠")
+
+
 st.title("Hugging Face Text Generation")
 st.caption("Enter a prompt, call your HF inference endpoint, and review results.")
 
