@@ -1,2 +1,0 @@
-[tool.poetry.scripts]
-app = "your_module.main:app"
