@@ -5,7 +5,3 @@ backgroundColor = "#Fdd5DF"
 secondaryBackgroundColor = "#ffffff"
 textColor = "#2a221f"
 font = "Helvetica"
-
-[server]
-address = "localhost"
-port = 8505
