@@ -281,7 +281,7 @@ with st.sidebar:
                             active_index = i
                             st.session_state["active_conversation_index"] = active_index
                     with cols[1]:
-                        if st.button("✕", key=f"delete_chat_{i}", type="secondary"):
+                        if st.button("X", key=f"delete_chat_{i}", type="secondary"):
                             delete_index = i
                             break
 
@@ -297,6 +297,20 @@ with st.sidebar:
                 st.session_state["active_conversation_index"] = active_index
     else:
         st.caption("No conversations yet.")
+
+    st.markdown("---")
+    with st.expander("User Memory", expanded=False):
+        facts = memory.get("facts", [])
+        if facts:
+            for fact in facts:
+                st.write(f"- {fact}")
+        else:
+            st.caption("No saved traits yet.")
+
+        if st.button("Clear Memory"):
+            memory["facts"] = []
+            save_memory(memory)
+            st.success("Memory cleared.")
 
 user_input = st.chat_input("Type your message")
 
